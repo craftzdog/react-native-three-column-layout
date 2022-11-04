@@ -1,20 +1,18 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-three-column-layout';
+import { StyleSheet, View } from 'react-native'
+import ThreeColumnLayout from 'react-native-three-column-layout'
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
-  );
+    <ThreeColumnLayout
+      renderLeftView={() => <View style={[styles.box, styles.leftColumn]} />}
+      renderMiddleView={() => (
+        <View style={[styles.box, styles.middleColumn]} />
+      )}
+      renderRightView={() => <View style={[styles.box, styles.rightColumn]} />}
+    />
+  )
 }
 
 const styles = StyleSheet.create({
@@ -24,8 +22,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    flex: 1,
   },
-});
+  leftColumn: { backgroundColor: 'red' },
+  middleColumn: { backgroundColor: 'yellow' },
+  rightColumn: { backgroundColor: 'blue' },
+})
