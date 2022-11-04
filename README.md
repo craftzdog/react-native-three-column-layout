@@ -1,6 +1,6 @@
 # react-native-three-column-layout
 
-Three-column layout with animation support
+This is a component that provides three-column layout with animation support for tablet displays.
 
 ## Installation
 
@@ -10,12 +10,40 @@ npm install react-native-three-column-layout
 
 ## Usage
 
-```js
-import { multiply } from 'react-native-three-column-layout';
+```jsx
+import ThreeColumnLayout from 'react-native-three-column-layout'
 
-// ...
+return (
+  <ThreeColumnLayout
+    renderLeftView={() => <View style={[styles.box, styles.leftColumn]} />}
+    renderMiddleView={() => <View style={[styles.box, styles.middleColumn]} />}
+    renderRightView={() => <View style={[styles.box, styles.rightColumn]} />}
+  />
+)
 
-const result = await multiply(3, 7);
+const styles = StyleSheet.create({
+  box: {
+    flex: 1,
+  },
+  leftColumn: { backgroundColor: 'red' },
+  middleColumn: { backgroundColor: 'yellow' },
+  rightColumn: { backgroundColor: 'blue' },
+})
+```
+
+## Props
+
+```ts
+type RenderView = (callbacks: ThreeColumnLayoutProps) => React.ReactNode
+type Props = {
+  renderLeftView: RenderView
+  renderMiddleView: RenderView
+  renderRightView: RenderView
+  leftViewVisible?: boolean
+  middleViewVisible?: boolean
+  leftViewWidth?: number
+  middleViewWidth?: number
+}
 ```
 
 ## Contributing
@@ -25,7 +53,3 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
