@@ -1,7 +1,7 @@
 {
   "name": "react-native-three-column-layout",
   "version": "0.1.0",
-  "description": "test",
+  "description": "Three-column layout with animation support for tablet displays",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
