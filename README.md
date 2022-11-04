@@ -4,6 +4,10 @@
 
 This is a component that provides three-column layout with animation support for tablet displays.
 
+## Example
+
+Check out [an example project here](https://github.com/craftzdog/inkdrop-ui-mockup-react-native)
+
 ## Installation
 
 ```sh
