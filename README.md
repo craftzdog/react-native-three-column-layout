@@ -1,5 +1,7 @@
 # react-native-three-column-layout
 
+![thumb](./thumb.svg)
+
 This is a component that provides three-column layout with animation support for tablet displays.
 
 ## Installation
