@@ -46,37 +46,21 @@ const ThreeColumnLayout: React.FC<Props> = (props) => {
   }
   const toggleLeftView = useCallback(
     (visible: boolean) => {
-      if (visible) {
-        Animated.spring(leftValue, {
-          useNativeDriver: false,
-          toValue: leftViewWidth,
-          bounciness: 0,
-        }).start()
-      } else {
-        Animated.spring(leftValue, {
-          useNativeDriver: false,
-          toValue: 0,
-          bounciness: 0,
-        }).start()
-      }
+      Animated.spring(leftValue, {
+        useNativeDriver: false,
+        toValue: visible ? leftViewWidth : 0,
+        bounciness: 0,
+      }).start()
     },
     [leftValue, leftViewWidth]
   )
   const toggleMiddleView = useCallback(
     (visible: boolean) => {
-      if (visible) {
-        Animated.spring(middleValue, {
-          useNativeDriver: false,
-          toValue: middleViewWidth,
-          bounciness: 0,
-        }).start()
-      } else {
-        Animated.spring(middleValue, {
-          useNativeDriver: false,
-          toValue: 0,
-          bounciness: 0,
-        }).start()
-      }
+      Animated.spring(middleValue, {
+        useNativeDriver: false,
+        toValue: visible ? middleViewWidth : 0,
+        bounciness: 0,
+      }).start()
     },
     [middleValue, middleViewWidth]
   )
